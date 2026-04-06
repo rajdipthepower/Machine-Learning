@@ -28,7 +28,7 @@ Where:
 ## 2. Model Parameters & Hyperparameters
 
 ### Physics Parameters for Harmonic Oscillator
-- $\omega_0 $ (Natural Frequency): 1.0
+- $\omega_0$ (Natural Frequency): 1.0
 
 ### Initial Conditions:
 - x(0) =  0, 
@@ -40,8 +40,8 @@ Where:
 - $\gamma$ (Damping Ratio): 2
 
 ### Initial Conditions:
-- $ x(0) = $ 0.1, 
-- $ v(0) = $ 0
+- x(0) = 0.1, 
+- v(0) = 0
 
 ### Loss Weight Configuration
 We use a weighted loss function to balance the Initial Condition (IC) and the Physics (ODE) residual:
