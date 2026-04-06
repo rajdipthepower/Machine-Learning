@@ -21,9 +21,9 @@ $$
 $$
 
 Where:
-- \( x \): Position
-- \( \gamma \): Damping coefficient
-- \( \omega_0 \): Natural frequency
+- x: Position
+- $\gamma$: Damping coefficient
+- $\omega_o$: Natural frequency
 
 ## 2. Model Parameters & Hyperparameters
 
