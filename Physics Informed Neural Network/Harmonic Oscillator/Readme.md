@@ -67,7 +67,7 @@ Based on the results of the SHO case, the Damped Harmonic Oscillator was trained
 
 ## 4. Results and Visualizations
 
-All generated plots can be found in the `/images` folder.
+All generated plots can be found in the `/Images` folder.
 
 ### SHO Comparison
 Comparison between the analytical solution and the PINN prediction using LBFGS.
