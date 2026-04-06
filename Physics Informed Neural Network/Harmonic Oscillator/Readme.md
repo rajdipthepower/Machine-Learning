@@ -28,7 +28,7 @@ Where:
 ## 2. Model Parameters & Hyperparameters
 
 ### Physics Parameters for Harmonic Oscillator
-- ( $\omega_0 $) (Natural Frequency): 1.0
+- $\omega_0 $ (Natural Frequency): 1.0
 
 ### Initial Conditions:
 - x(0) =  0, 
@@ -36,8 +36,8 @@ Where:
 
 ### Physics Parameters for Damped Harmonic Oscillator
 
-- $\omega_0 $ (Natural Frequency): 10.0
-- $\gamma  $ (Damping Ratio): 2
+- $\omega_0$ (Natural Frequency): 10.0
+- $\gamma$ (Damping Ratio): 2
 
 ### Initial Conditions:
 - $ x(0) = $ 0.1, 
