@@ -21,9 +21,9 @@ $$
 $$
 
 Where:
-- x: Position
-- $\gamma$: Damping coefficient
-- $\omega_o$: Natural frequency
+- x : Position
+- $\gamma$ : Damping coefficient
+- $\omega_o$ : Natural frequency
 
 ## 2. Model Parameters & Hyperparameters
 
@@ -31,17 +31,17 @@ Where:
 - ( $omega_0 $) (Natural Frequency): 1.0
 
 ### Initial Conditions:
-- $( x(0) = $) 0, 
-- $( v(0) = $) 1
+- x(0) =  0, 
+- v(0) =  1
 
 ### Physics Parameters for Damped Harmonic Oscillator
 
-- $( omega_0 $) (Natural Frequency): 10.0
-- $( gamma $) (Damping Ratio): 2
+- $omega_0 $ (Natural Frequency): 10.0
+- $ gamma  $ (Damping Ratio): 2
 
 ### Initial Conditions:
-- $( x(0) = $) 0.1, 
-- $( v(0) = $) 0
+- $ x(0) = $ 0.1, 
+- $ v(0) = $ 0
 
 ### Loss Weight Configuration
 We use a weighted loss function to balance the Initial Condition (IC) and the Physics (ODE) residual:
