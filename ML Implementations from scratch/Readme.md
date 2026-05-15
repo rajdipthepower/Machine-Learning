@@ -7,7 +7,7 @@ This repository contains a rigorous exploration of machine learning algorithms, 
 ## 📂 Repository Structure
 
 > **Note:** All assignment files are located in the following directory:  
-> `Machine-Learning-Assignments/`
+> `ML Implementations from scratch/`
 
 ---
 
