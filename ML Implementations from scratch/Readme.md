@@ -3,15 +3,15 @@
 This repository contains a rigorous exploration of machine learning algorithms, transitioning from raw mathematical theory to practical implementation. The core philosophy is to build complex models—such as Decision Trees and the EM algorithm—entirely from scratch using **NumPy** before benchmarking them against industrial standards like **Scikit-Learn**.
 
 ## 📂 Repository Structure
-**Note:** All assignment files should be deposited in the following directory:  
+**Note:** All assignment files are located in the following directory:  
 `Machine-Learning-Assignments/`
 
 ### 1. ML_Assignment_1.ipynb (Foundations & Manual Logic)
-* **Exploratory Data Analysis (EDA):** Extensive initial data visualization and statistical analysis to understand feature distributions and correlations.
+* **Extensive EDA:** Detailed initial data visualization, correlation heatmaps, and statistical profiling were performed to understand feature relationships before modeling.
 * **Linear Regression:** Manual implementation via the Normal Equation (OLS), complemented by Forward and Backward Stepwise Selection.
-* **Regularization:** In-depth study of Ridge (L2) and Lasso (L1) regression.
+* **Regularization:** In-depth study of Ridge (L2) and Lasso (L1) regression on the Diabetes dataset.
 * **Logistic Regression:** Multi-class classification implemented for the **Iris Dataset**.
-* **Decision Tree from Scratch:** High-performance implementation tested on the **MNIST Dataset**.
+* **Decision Tree from Scratch:** High-performance implementation tested on the **MNIST Handwritten Digits Dataset**.
 * **Clustering:** K-Means implementation on the Wine Dataset with a focus on Feature Scaling impact.
 
 ### 2. ML_Assignment_2.ipynb (Probabilistic & Deep Learning)
@@ -22,7 +22,7 @@ This repository contains a rigorous exploration of machine learning algorithms, 
 ---
 
 ## 🏆 Featured Implementation: Decision Tree from Scratch
-The centerpiece of this project is a robust **Decision Tree Classifier** built from first principles. It was specifically designed to handle the complexity of the MNIST digits dataset, and through careful tuning of stopping conditions, it successfully outperformed the standard Scikit-Learn implementation.
+The centerpiece of this project is a robust **Decision Tree Classifier** built from first principles. Designed to handle the high-dimensional MNIST dataset, this implementation utilizes custom stopping conditions that allow it to outperform the standard Scikit-Learn model.
 
 ### Performance Benchmark
 $$\Large
@@ -41,16 +41,16 @@ $$\Large
 \end{array}$$
 
 ### Why the Custom Model Outperformed Sklearn:
-* **Thresholding & Early Stopping:** While Sklearn uses `min_impurity_decrease`, this implementation utilizes a custom `info_gain_thres`. This allowed the model to split to a more optimal depth, capturing finer pixel nuances that Sklearn's default pruning might miss.
-* **Information Gain Nuance:** Differences in the precision of Information Gain calculations and the specific handling of continuous pixel thresholds allowed this model to achieve higher predictive power on the test set.
+* **Thresholding & Early Stopping:** While Sklearn uses `min_impurity_decrease`, this implementation utilizes a custom `info_gain_thres`. This allowed the model to explore deeper splits, capturing finer pixel nuances that default pruning might miss.
+* **Information Gain Nuance:** Precise handling of continuous pixel thresholds and Information Gain formulas allowed this model to maintain higher predictive power on the test set without significant overfitting.
 
 ---
 
 ## 🚀 Technical Highlights
 
-* **Extensive EDA:** Before any modeling, each dataset underwent rigorous Exploratory Data Analysis to identify outliers, multi-collinearity, and class imbalances.
-* **ANN Optimization:** The Feed-Forward Neural Network achieved an impressive **~96.67% accuracy** on MNIST. L2 regularization was used to significantly narrow the generalization gap.
-* **Mathematical Convergence:** The EM algorithm for GMM successfully converged to true distribution parameters with a minimal MSE of **~0.071**, proving the stability of the manual implementation.
+* **Data-First Approach (EDA):** No model was built without first performing comprehensive Exploratory Data Analysis to identify outliers, multi-collinearity, and class imbalances.
+* **ANN Optimization:** The Feed-Forward Neural Network achieved an impressive **~96.67% accuracy** on MNIST. The addition of L2 regularization proved vital in narrowing the generalization gap.
+* **Mathematical Convergence:** The EM algorithm for GMM successfully converged to true distribution parameters with a minimal MSE of **~0.071**, validating the stability of the manual implementation.
 * **The Scaling Verdict:** In K-Means clustering, analysis proved that while unscaled data might show lower inertia, scaled data is statistically superior for identifying distinct classes (ARI ~0.716).
 
 ---
@@ -61,9 +61,8 @@ $$\Large
 * **Benchmarking:** Scikit-Learn
 
 ## 🏃 Execution
-To run these notebooks:
 1. Clone the repository.
-2. Ensure all notebooks are in the `Machine-Learning-Assignments/` folder.
+2. Ensure all notebooks and the assignment PDF are in the `Machine-Learning-Assignments/` folder.
 3. Install dependencies:
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn
