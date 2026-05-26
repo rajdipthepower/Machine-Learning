@@ -29,7 +29,7 @@ Imbalanced datasets can lead to models that perform well on the majority class b
 
 A feed-forward neural network (Multilayer Perceptron) is implemented using Keras. To ensure reproducible benchmarks, the architecture is completely re-instantiated and re-compiled between experiments to guarantee a fresh initialization of weights:
 
-* **Input Layer:** Dynamically shapes to the feature space (`X_tr.shape[1]`), consisting of 32 units with `ReLU` activation.
+* **Input Layer:** Dynamically shapes to the feature space , consisting of 32 units with `ReLU` activation.
 * **Hidden Layers:** Two dense layers consisting of 100 units each with `ReLU` activations to map complex, non-linear patterns.
 * **Output Layer:** A single neuron with a `Sigmoid` activation function to output the probability of churn.
 * **Optimization & Callbacks:** Compiled with the Adam optimizer and Binary Cross-Entropy loss. Training utilizes `EarlyStopping` monitoring validation accuracy with a patience of 5 epochs and weight restoration enabled.
