@@ -2,13 +2,14 @@
 
 This directory contains a comparative study of image classification on the CIFAR-10 dataset. It explores the transition from standard Feed-Forward Neural Networks (ANN) to Convolutional Neural Networks (CNN), with a specific focus on how different architectures handle high-dimensional RGB data and spatial correlations.
 
-This study also serves as a conceptual foundation for understanding why modern vision architectures move from dense networks → convolutional priors → transformer-based models for visual understanding.
+This repository has now been extended to include **Transformer-based vision modeling (ViT)**, enabling a comparison between classical deep learning approaches (ANN/CNN) and modern attention-based architectures.
 
 ---
 
 ## 📁 Folder Structure
 * `ANN_CIFAR10.ipynb`: A study on the limitations of dense architectures, documenting the "Curse of Dimensionality" and parameter explosion.
 * `CNN_CIFAR10.ipynb`: An optimized implementation utilizing spatial hierarchies and translation invariance for superior classification accuracy.
+* `ViT_CIFAR10.ipynb`: A Vision Transformer-based implementation using pretrained **ViT-Base-Patch16-224** with **LoRA fine-tuning** for efficient adaptation on CIFAR-10.
 
 ---
 
@@ -18,28 +19,19 @@ This study also serves as a conceptual foundation for understanding why modern v
 * **Feature Analysis:** Comparative study of Grayscale (1,024 features) vs. RGB (3,072 features).
 * **Redundancy Mapping:** Analysis of why FFNNs fail to exploit inter-channel correlations, leading to inevitable overfitting on high-dimensional inputs.
 
-🔎 **Additional Insight:**  
-This step highlights that flattening images destroys spatial locality, forcing ANN models to learn spatial relationships implicitly rather than structurally.
-
 ---
 
 ### 2. Architectural Implementations
-
 * **ANN Prototype:** A multi-layer dense network used to benchmark the baseline performance of standard neural layers on complex image data.
 * **CNN Prototype:** A hierarchical feature-extraction model using `Conv2D` and `MaxPooling2D` layers to reduce degrees of freedom and focus on local spatial patterns.
-
-🔎 **Additional Insight:**  
-CNNs introduce **inductive bias (local connectivity + weight sharing)**, which drastically reduces parameter redundancy compared to fully connected layers.
+* **ViT Prototype:** A transformer-based vision model leveraging patch embeddings and self-attention mechanisms, fine-tuned using **LoRA (Low-Rank Adaptation)** for parameter-efficient training.
 
 ---
 
 ### 3. Key Findings
-
 * **Structural Bias:** Demonstrated that without convolutional filters, parameter count increases without a proportional gain in information density.
 * **Invariance:** CNNs successfully captured spatial features that were lost in the flattened input of the ANN model.
-
-🔎 **Additional Insight:**  
-Pooling operations contribute to **translation invariance**, allowing the model to recognize objects regardless of position shifts in the image.
+* **Global Context Learning:** Vision Transformers improve performance by modeling **long-range dependencies** between image patches using self-attention instead of convolution.
 
 ---
 
@@ -49,28 +41,12 @@ Pooling operations contribute to **translation invariance**, allowing the model 
 | :--- | :--- | :--- |
 | **ANN** | Flattened Vector | High redundancy; restricted generalization. |
 | **CNN** | Spatial Tensors | Efficient feature extraction; translation invariance. |
-
-🔎 **Additional Insight:**  
-The performance gap between ANN and CNN grows significantly with image complexity and channel depth, reinforcing CNNs as the preferred baseline for vision tasks.
+| **ViT** | Patch + Attention | Strong global feature modeling; scalable with pretraining. |
 
 ---
 
 ## 📂 Tech Stack
-
-* **Framework:** TensorFlow / Keras
-* **Libraries:** NumPy, Matplotlib, Scikit-learn
+* **Framework:** TensorFlow / Keras (ANN & CNN), PyTorch (ViT)
+* **Libraries:** NumPy, Matplotlib, Scikit-learn, torchvision
+* **Transformer Stack:** Hugging Face Transformers + PEFT (LoRA)
 * **Hardware:** Optimized for T4 GPU acceleration
-
----
-
-## 🚀 Extended Context (Modern Perspective)
-
-While this repository focuses on ANN vs CNN, it forms a conceptual bridge toward modern architectures:
-
-- CNNs → introduce spatial priors  
-- Vision Transformers → replace convolution with self-attention  
-- Hybrid models → combine both paradigms  
-
-This progression explains why architectures evolve from **handcrafted inductive bias → data-driven global attention mechanisms**.
-
----
